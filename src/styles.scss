@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'nunitoSans';
+  src: url('../src/assets/fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: nunitoSans !important;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .primary-btn:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .primary-btn:active {
+    box-shadow: none;
+  }
+
+  .primary-btn:active{
+    transform: scale(0.96);
+  }

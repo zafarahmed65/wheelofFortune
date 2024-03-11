@@ -1,0 +1,41 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffff; /* or any color you prefer */
+  z-index: 1000; /* higher index to ensure it's above other content */
+  display: flex;
+  align-items: center;
+  padding: 0 15px; /* Add some padding on the sides */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for a "lifted" effect */
+  height: 80px; /* Adjust to the height of your navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Remove the margin-bottom as it is not typically needed for fixed navbars */
+/* The body padding-top should equal the height of the navbar plus any additional space desired */
+body {
+  padding-top: 60px; /* This should match the navbar's height */
+}
+
+/* The app-wheel-design doesn't need a top margin since body padding-top is already providing space */
+app-wheel-design {
+  margin-top: 90px;
+}
+
+.date-time {
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-fontawesome{
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  color: black;
+}

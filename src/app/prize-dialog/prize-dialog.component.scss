@@ -1,0 +1,60 @@
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1040; /* Ensure this is lower than the canvas' z-index */
+}
+
+.dialog-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 700px;
+  width: 80vw;
+  height: max-content;
+  background-color: white;
+}
+
+.prize-img {
+  width: 50%;
+  max-width: 200px;
+}
+
+.dialog-header {
+  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: -0.025em;
+  color: white;
+}
+
+.dialog-text {
+  color: #94a3b8;
+  font-size: 20px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.results {
+  width: calc(100% - 50px);
+  margin-right: 25px;
+  margin-left: 25px;
+  pointer-events: none;
+}
+
+canvas#confetti-canvas {
+  z-index: 1050; /* Example value, ensure this is higher than the dialog's z-index */
+  position: absolute; /* or 'fixed' depending on your layout */
+}

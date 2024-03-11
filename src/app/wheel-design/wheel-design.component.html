@@ -1,0 +1,82 @@
+<div class="new-component">
+  <div class="new-wheel-container">
+    <svg data-v-40e91c7c="" width="800" height="512" fill="none" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 502 322" class="spinner-wrapper">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M341 322c88.918 0 161-72.082 161-161S429.918 0 341 0c-43.868 0-83.638 17.545-112.677 46H15C6.716 46 0 52.716 0 61v201c0 8.284 6.716 15 15 15h214.353c28.945 27.866 68.295 45 111.647 45z"
+        fill="#EFF1F7" fill-opacity=".5"></path>
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M494 161c0 84.5-68.5 153-153 153-42.345 0-80.672-17.202-108.374-45H14a6 6 0 01-6-6V96a6 6 0 016-6h191.436C231.02 41.252 282.127 8 341 8c84.5 0 153 68.5 153 153z"
+        fill="#fff" fill-opacity=".8"></path>
+    </svg>
+
+    <div class="itemss">
+      <div class="wheel-table">
+        <div class="table-content">
+          <button [ngStyle]="{'background-color':prizes[currentActiveItem].color}"
+            class="primary-btn preview-button">{{prizes[currentActiveItem].name}}</button>
+          <div class="added-entries" style="margin-left: 10px;">
+            <!-- entries -->
+            <div class="entries-div">
+              <span>Entries</span>
+              <div class="items-counter">{{prizes.length}}</div>
+            </div>
+
+            <!-- input field -->
+            <div class="input-wrapper">
+              <input (keyup.enter)="addNewItem()" [formControl]="inputField" placeholder="entries1, entries2,..."
+                type="text" class="item-input">
+              <button class="primary-btn small-btn" (click)="addNewItem()">Add</button>
+            </div>
+
+            <!-- list of entries -->
+            <div class="entries-list">
+              <div class="no-prizes" *ngIf="!addedAnyPrize">
+                Enter entries separated by a comma
+              </div>
+              <div *ngIf="addedAnyPrize" class="prize-list">
+                <div class="prize-list-element" *ngFor="let prize of prizes; index as i">
+                  <span>{{prize.name}}</span>
+                  <img (click)="deletePrize(i)" class="delete-item" src="assets/bin.svg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wheel-new-item">
+        <div class="wheel-container">
+
+          <div class="pointer" [ngStyle]="{'transform':'translate(-40px, 5px)rotate(' + (-45) + 'deg)'}">
+            <img style="transform: rotate(60deg);" src="../../assets/pointer.svg" alt="">
+          </div>
+
+          <div class="start-spin-btn">
+            <button (click)="rotateWheel()" class="primary-btn rounded-btn">
+              <img src="assets/new-logo.PNG" alt="My Logo" width="70" height="auto" class="inline-block">
+            </button>
+          </div>
+          <div [ngStyle]="{'transform': 'rotate(' + (spinValue + this.offsetValue) + 'deg)'}" class="wheel-of-fortune">
+
+
+            <div [ngStyle]="{'transform': 'rotate(' + (angle * (i + 1/2) - 90) + 'deg)'}" class="names-div"
+              *ngFor="let prize of prizes; index as i">
+              <div class="prize-name">{{prize.name}}</div>
+            </div>
+
+
+            <svg viewBox="0 0 32 32" style="width:100%; height:auto;">
+              <g transform="translate(16,16)">
+                <ng-container *ngFor="let prize of prizes; index as i">
+                  <path *ngIf="getPieSlice(i)" [attr.d]="getPieSlice(i)" [attr.fill]="getColor(i)"></path>
+                </ng-container>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-prize-dialog [prize]="selectedPrize" *ngIf="prizeDialogOpen"
+    (closeDialog)="prizeDialogOpen = false"></app-prize-dialog>

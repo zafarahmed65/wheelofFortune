@@ -1,0 +1,11 @@
+<div *ngIf="prize" class="dialog-overlay">
+    <div class="dialog-body">
+        <canvas id="confetti-canvas"></canvas>
+
+        <p class="dialog-text">The results are in...</p>
+        <div class="primary-btn results" [ngStyle]="{'background-color':prize.color}" style="margin-top: 6px;">
+            {{prize.name}}
+        </div>
+        <button style="z-index: 99999999;" class="primary-btn mt-5" (click)="closeComponent()">Ok</button>
+    </div>
+</div>

@@ -1,0 +1,338 @@
+:host {
+  display: block; /* This ensures that the margin applies correctly. */
+  margin-top: 10px; /* This value should be the height of your navbar plus any desired extra space. */
+}
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: block;
+}
+
+.wheel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-18px);
+}
+
+.rounded-btn {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background-color: transparent;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999999px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.wheel-of-fortune {
+  width: 70%;
+  border: 10px solid white;
+  overflow: hidden;
+  border-radius: 9999999999999999999px;
+  position: relative;
+  aspect-ratio: 1 / 1 !important;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.5, 0.4, 0, 0.2, 1);
+  transition-duration: 13s;
+  transform-origin: center center;
+}
+
+.start-spin-btn {
+  position: absolute;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 99999999999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.spinner-wrapper {
+  display: none;
+}
+
+.indicator-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator {
+  position: absolute;
+  width: 35px;
+  height: 50px;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, calc(-100% + 3px));
+  z-index: 99999;
+}
+
+.prize-container {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: bottom right;
+  clip-path: polygon(0 0, 59% 0, 100% 100%, 0 59%);
+  // border: 4px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prize-name {
+  font-weight: bold;
+  font-size: 25px;
+  transform: translateY(11px) rotate(90deg);
+  color: white;
+}
+
+.new-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.new-wheel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.itemss {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.wheel-table {
+  width: calc(100% - 40px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+}
+
+.wheel-new-item {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+
+.table-content {
+  width: 100%;
+  height: 358px;
+  padding: 20px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.entries-div {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  align-items: center;
+  font-weight: bold;
+  color: #555555;
+  font-size: 15px;
+}
+
+.items-counter {
+  margin-left: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e5;
+}
+
+.input-wrapper {
+  display: flex;
+}
+
+input.item-input {
+  width: auto;
+  outline: none;
+  border: 1px solid #d2d2d2;
+  flex-grow: 1;
+  height: 32px;
+  font-size: 14px;
+  color: black;
+  border-radius: 5px;
+  padding-left: 6px;
+  padding-right: 35px;
+}
+
+input.item-input::placeholder {
+  color: #b5b5b5;
+  font-size: 14px;
+}
+
+input.item-input:hover {
+  border: 1px solid #348ef6;
+}
+
+.small-btn {
+  font-size: 14px;
+  height: 32px;
+  border-radius: 16px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 0;
+  margin: 0;
+  margin-left: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.added-entries {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.entries-list {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 10px;
+}
+
+.no-prizes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.names-div {
+  width: 0;
+  height: 50%;
+  transform-origin: bottom left;
+  position: absolute;
+  left: 50%;
+}
+
+.pointer {
+  position: absolute;
+  width: 0;
+  height: 50%;
+  top: 0;
+  left: 0;
+  z-index: 9999999999999999999999;
+  width: 0;
+  height: 50%;
+  transform-origin: bottom left;
+  position: absolute;
+  left: 50%;
+}
+
+.preview-button {
+  pointer-events: none;
+}
+
+.prize-list {
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prize-list-element {
+  padding: 6px;
+  font-size: 12px;
+  background-color: rgba(211, 215, 225, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.delete-item {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.prize-list-element:hover .delete-item {
+  opacity: 1;
+}
+
+@media (min-width: 820px) {
+  .itemss {
+    flex-direction: row;
+  }
+
+  .wheel-table {
+    order: 1;
+    width: 320px;
+  }
+
+  .wheel-new-item {
+    order: 2;
+  }
+
+  .wheel-of-fortune {
+    width: 100%;
+  }
+
+  .spinner-wrapper {
+    display: block;
+  }
+
+  .new-wheel-container {
+    width: auto;
+    height: auto;
+  }
+
+  .table-content {
+    padding-right: 0px;
+  }
+
+  .input-wrapper {
+    width: 180px;
+  }
+}
